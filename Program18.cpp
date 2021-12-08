@@ -23,7 +23,6 @@ int CountBits(UINT iNo)
 	return iCnt;
 }
 
-typedef unsigned int UINT;
 int main()
 {
 	UINT iNo=0;
