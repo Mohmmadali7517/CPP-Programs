@@ -5,35 +5,41 @@ Output : 2 4
 void CommonBits(UINT iNo1, UINT iNo2)
 {
 // Logic
-}
-*/
+}*/
 
 #include<iostream>
 using namespace std;
+
 typedef unsigned int UINT;
 
-void CommonBits(UINT iNo1, UINT iNo2)
+void CommonBits(UINT iNo1,UINT iNo2)
 {
+	int iCnt=1;
 	UINT iResult=0x00000000;
 	iResult=iNo1&iNo2;
-	cout<<"Common on bits in both numbers are:\n ";
-	for(int i=1; i<=32; i++)
+	
+	while(iResult!=0)
 	{
 		if((iResult&1)==1)
-			cout<<i<<"\t";
+		{
+			cout<<iCnt<<"\t";
+		}
+		iCnt++;
 		iResult=iResult>>1;
 	}
+	
 }
-		
 
 int main()
 {
-	UINT iNo1, iNo2;
-	cout<<"Enter the first number: ";
+	UINT iNo1=0,iNo2=0;
+	
+	cout<<"Enter First Number\n";
 	cin>>iNo1;
-	cout<<"Enter the second number: ";
+	
+	cout<<"Enter Second Number\n";
 	cin>>iNo2;
+	
 	CommonBits(iNo1,iNo2);
 	return 0;
 }
-	
